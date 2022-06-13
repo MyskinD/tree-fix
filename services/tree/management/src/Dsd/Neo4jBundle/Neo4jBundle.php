@@ -17,9 +17,7 @@ final class Neo4jBundle extends Bundle
     public function __construct()
     {
         $this->client = ClientBuilder::create()
-            ->withDriver('bolt', 'bolt+s://user:password@localhost') // creates a bolt driver
-            ->withDriver('https', 'https://test.com', Authenticate::basic('user', 'password')) // creates an http driver
-            ->withDefaultDriver('bolt')
+            ->withDriver('default', 'bolt://neo4j:password@localhost')
             ->build();
     }
 
