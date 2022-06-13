@@ -17,7 +17,7 @@ final class Neo4jBundle extends Bundle
     public function __construct()
     {
         $this->client = ClientBuilder::create()
-            ->withDriver('default', 'bolt://neo4j:password@localhost')
+            ->withDriver('default', 'neo4j://localhost:7687')
             ->build();
     }
 
